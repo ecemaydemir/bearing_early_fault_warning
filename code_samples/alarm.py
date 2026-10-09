@@ -1,3 +1,5 @@
+# Excerpt from the full (private) project, shared for illustration only. All rights reserved.
+
 """From anomaly scores to operator-facing alarms, and how to evaluate them."""
 from __future__ import annotations
 

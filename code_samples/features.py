@@ -1,3 +1,5 @@
+# Excerpt from the full (private) project, shared for illustration only. All rights reserved.
+
 """Per-snapshot condition indicators.
 
 Every 1-second snapshot is reduced to a small vector of physically meaningful
