@@ -1,6 +1,6 @@
 PY ?= python
 
-.PHONY: all data features experiment test
+.PHONY: all data features experiment dashboard test
 
 all: experiment
 
@@ -12,6 +12,9 @@ features:        ## raw snapshots -> data/features/*.csv.gz (already committed)
 
 experiment:      ## fit detectors, raise alarms, write reports/ (runs from the committed features)
 	$(PY) scripts/run_experiment.py --config configs/default.yaml
+
+dashboard:       ## interactive replay of a test (http://localhost:8501)
+	streamlit run app/dashboard.py
 
 test:
 	$(PY) -m pytest -q
