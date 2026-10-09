@@ -1,6 +1,6 @@
 PY ?= python
 
-.PHONY: all data features experiment dashboard test
+.PHONY: all data features experiment dashboard test report
 
 all: experiment
 
@@ -18,3 +18,6 @@ dashboard:       ## interactive replay of a test (http://localhost:8501)
 
 test:
 	$(PY) -m pytest -q
+
+report:          ## technical report, English + Turkish PDFs (needs a LaTeX install with latexmk)
+	cd report && latexmk -pdf -interaction=nonstopmode report_en.tex report_tr.tex
