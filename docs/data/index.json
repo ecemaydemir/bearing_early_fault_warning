@@ -1,0 +1,58 @@
+{
+ "tests": [
+  {
+   "name": "test1",
+   "folder": "1st_test",
+   "n": 2156,
+   "duration_h": 827.56,
+   "file": "data/test1.json"
+  },
+  {
+   "name": "test2",
+   "folder": "2nd_test",
+   "n": 982,
+   "duration_h": 163.5,
+   "file": "data/test2.json"
+  },
+  {
+   "name": "test3",
+   "folder": "4th_test",
+   "n": 6323,
+   "duration_h": 1073.09,
+   "file": "data/test3.json"
+  }
+ ],
+ "detectors": [
+  "RMS threshold",
+  "Mahalanobis",
+  "Isolation Forest",
+  "LSTM autoencoder"
+ ],
+ "default_test": "test2",
+ "default_detector": "Isolation Forest",
+ "split": {
+  "train_end": 0.25,
+  "calib_end": 0.35
+ },
+ "alarm": {
+  "k": 4,
+  "n": 6
+ },
+ "defects": [
+  {
+   "key": "bpfo",
+   "label": "outer race",
+   "hz": 236.4
+  },
+  {
+   "key": "bpfi",
+   "label": "inner race",
+   "hz": 296.9
+  },
+  {
+   "key": "bsf",
+   "label": "rolling element",
+   "hz": 139.9
+  }
+ ]
+}

@@ -8,8 +8,7 @@ in practice. This system learns what *healthy* vibration looks like from the fir
 bearing's life. When a bearing drifts away from that baseline, it raises a debounced alarm and names
 the likely defect (outer race, inner race or rolling element).
 
-> This is a showcase repository. The full source code is kept private. The complete method,
-> code excerpts and results are documented in the technical report.
+> 📊 **Live dashboard:** [ecemaydemir.github.io/bearing_early_fault_warning](https://ecemaydemir.github.io/bearing_early_fault_warning/)
 >
 > 📄 **Technical report:** [English](report/report_en.pdf) · [Türkçe](report/report_tr.pdf)
 
@@ -59,7 +58,8 @@ Code excerpts: [`code_samples/features.py`](code_samples/features.py) (signal fe
 
 ## Interactive dashboard
 
-A Streamlit dashboard replays each test as if it were streaming from the machine. It shows:
+The [live dashboard](https://ecemaydemir.github.io/bearing_early_fault_warning/) replays each test as if it
+were streaming from the machine. It shows:
 
 * each bearing's status and score against its threshold;
 * which bearing alarmed first;
@@ -90,5 +90,4 @@ NASA Prognostics Center of Excellence.
 
 ---
 
-© 2026 Ecem Aydemir. All rights reserved. See [LICENSE](LICENSE). Access to the full source code is
-available on request.
+Ecem Aydemir
