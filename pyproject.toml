@@ -1,0 +1,12 @@
+[project]
+name = "bearing-efw"
+version = "0.1.0"
+description = "Early fault warning for rolling-element bearings on the NASA/IMS run-to-failure dataset"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

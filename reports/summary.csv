@@ -1,0 +1,49 @@
+test,detector,bearing,failed,failure_mode,first_alarm_h,persistent_alarm_h,lead_time_h,lead_time_pct_life,diagnosis,false_alarm_episodes,healthy_eval_hours
+test1,RMS threshold,1,False,,815.19,815.19,12.37,1.50,no clear defect frequency,0,197.61
+test1,RMS threshold,2,False,,730.18,732.68,94.88,11.47,no clear defect frequency,0,197.61
+test1,RMS threshold,3,True,inner race defect,554.10,728.51,99.05,11.97,no clear defect frequency,11,197.61
+test1,RMS threshold,4,True,roller element defect,622.77,650.93,176.62,21.34,no clear defect frequency,4,197.61
+test1,Mahalanobis,1,False,,815.35,815.35,12.21,1.48,no clear defect frequency,0,197.61
+test1,Mahalanobis,2,False,,736.51,799.35,28.21,3.41,no clear defect frequency,0,197.61
+test1,Mahalanobis,3,True,inner race defect,747.18,815.35,12.21,1.48,no clear defect frequency,0,197.61
+test1,Mahalanobis,4,True,roller element defect,672.83,779.58,47.98,5.80,no clear defect frequency,0,197.61
+test1,Isolation Forest,1,False,,818.52,818.52,9.04,1.09,no clear defect frequency,0,197.61
+test1,Isolation Forest,2,False,,815.52,815.52,12.04,1.45,no clear defect frequency,0,197.61
+test1,Isolation Forest,3,True,inner race defect,755.51,814.69,12.87,1.56,no clear defect frequency,0,197.61
+test1,Isolation Forest,4,True,roller element defect,670.96,670.96,156.59,18.92,no clear defect frequency,0,197.61
+test1,LSTM autoencoder,1,False,,738.18,815.19,12.37,1.50,no clear defect frequency,0,197.61
+test1,LSTM autoencoder,2,False,,737.34,793.85,33.71,4.07,no clear defect frequency,0,197.61
+test1,LSTM autoencoder,3,True,inner race defect,570.21,742.68,84.88,10.26,no clear defect frequency,3,197.61
+test1,LSTM autoencoder,4,True,roller element defect,629.77,671.00,156.56,18.92,no clear defect frequency,1,197.61
+test2,RMS threshold,1,True,outer race failure,89.17,89.17,74.33,45.46,outer race (z=6.3),0,24.33
+test2,RMS threshold,2,False,,117.50,128.33,35.17,21.51,no clear defect frequency,0,24.33
+test2,RMS threshold,3,False,,145.67,145.67,17.83,10.91,no clear defect frequency,0,24.33
+test2,RMS threshold,4,False,,109.50,114.33,49.17,30.07,no clear defect frequency,0,24.33
+test2,Mahalanobis,1,True,outer race failure,89.17,89.17,74.33,45.46,outer race (z=6.3),0,24.33
+test2,Mahalanobis,2,False,,117.50,135.83,27.67,16.92,no clear defect frequency,0,24.33
+test2,Mahalanobis,3,False,,142.83,144.50,19.00,11.62,no clear defect frequency,0,24.33
+test2,Mahalanobis,4,False,,117.00,117.00,46.50,28.44,outer race (z=5.6),0,24.33
+test2,Isolation Forest,1,True,outer race failure,90.67,90.67,72.83,44.55,outer race (z=7.3),0,24.33
+test2,Isolation Forest,2,False,,139.50,140.67,22.83,13.97,outer race (z=4.3),0,24.33
+test2,Isolation Forest,3,False,,142.67,142.67,20.83,12.74,no clear defect frequency,0,24.33
+test2,Isolation Forest,4,False,,117.17,138.50,25.00,15.29,outer race (z=3.4),0,24.33
+test2,LSTM autoencoder,1,True,outer race failure,67.50,88.83,74.67,45.67,outer race (z=6.1),1,24.33
+test2,LSTM autoencoder,2,False,,117.67,117.67,45.83,28.03,outer race (z=4.2),0,24.33
+test2,LSTM autoencoder,3,False,,137.50,137.50,26.00,15.90,no clear defect frequency,0,24.33
+test2,LSTM autoencoder,4,False,,72.83,100.00,63.50,38.84,no clear defect frequency,1,24.33
+test3,RMS threshold,1,False,,1014.42,1046.09,27.00,2.52,outer race (z=3.1),0,527.67
+test3,RMS threshold,2,False,,1029.42,1036.75,36.33,3.39,no clear defect frequency,0,527.67
+test3,RMS threshold,3,True,outer race failure,924.07,1013.75,59.33,5.53,no clear defect frequency,0,527.67
+test3,RMS threshold,4,False,,400.24,1045.92,27.17,2.53,outer race (z=10.2),1,527.67
+test3,Mahalanobis,1,False,,1014.42,1014.42,58.67,5.47,no clear defect frequency,0,527.67
+test3,Mahalanobis,2,False,,1044.59,1044.92,28.17,2.62,no clear defect frequency,0,527.67
+test3,Mahalanobis,3,True,outer race failure,1014.42,1014.42,58.67,5.47,no clear defect frequency,0,527.67
+test3,Mahalanobis,4,False,,400.24,1044.25,28.83,2.69,outer race (z=5.5),2,527.67
+test3,Isolation Forest,1,False,,,,,,,0,527.67
+test3,Isolation Forest,2,False,,1055.42,1069.25,3.83,0.36,outer race (z=7.6),0,527.67
+test3,Isolation Forest,3,True,outer race failure,1046.75,1059.09,14.00,1.30,outer race (z=11.4),0,527.67
+test3,Isolation Forest,4,False,,1046.75,1058.42,14.67,1.37,outer race (z=9.7),0,527.67
+test3,LSTM autoencoder,1,False,,443.74,1014.42,58.67,5.47,no clear defect frequency,27,527.67
+test3,LSTM autoencoder,2,False,,476.57,1037.92,35.17,3.28,no clear defect frequency,4,527.67
+test3,LSTM autoencoder,3,True,outer race failure,1014.75,1014.75,58.33,5.44,no clear defect frequency,0,527.67
+test3,LSTM autoencoder,4,False,,400.24,1031.75,41.33,3.85,outer race (z=7.5),1,527.67
