@@ -5,3 +5,10 @@ __pycache__/
 .pytest_cache/
 .venv/
 .DS_Store
+# LaTeX build files (the PDFs in report/ are committed)
+report/*.aux
+report/*.log
+report/*.toc
+report/*.out
+report/*.fls
+report/*.fdb_latexmk

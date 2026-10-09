@@ -49,6 +49,16 @@ Test durations: test1 828 h, test2 164 h, test3 1073 h.
 Full per-bearing results: [`reports/summary.csv`](reports/summary.csv). Score traces:
 `reports/scores.csv.gz`.
 
+## Technical report
+
+A detailed write-up of the whole project (theory, dataset, tools, methodology with code excerpts,
+every figure with its interpretation, results, limitations) is available in two languages:
+
+* English: [`report/report_en.pdf`](report/report_en.pdf)
+* Türkçe: [`report/report_tr.pdf`](report/report_tr.pdf)
+
+The LaTeX sources are in `report/`; rebuild them with `make report`.
+
 ## Interactive dashboard
 
 `make dashboard` (or `streamlit run app/dashboard.py`) replays any test as if it were streaming
@@ -147,11 +157,12 @@ src/bearing_efw/
     models.py               RMS, Mahalanobis, Isolation Forest, LSTM autoencoder
     alarm.py                thresholding, k-of-n debouncing, alarm episodes
     plots.py                report figures
-scripts/                    download_data.py, build_features.py, run_experiment.py
+scripts/                    download_data.py, build_features.py, run_experiment.py, make_report_figures.py
 app/dashboard.py            Streamlit replay of a test with live status, diagnosis and alarm log
 data/features/              extracted features (committed)
 reports/                    results.md, summary.csv, scores.csv.gz, figures/
 notebooks/                  01_walkthrough.ipynb
+report/                     technical report, LaTeX sources + PDFs (English and Turkish)
 tests/                      unit tests (features, synthetic outer-race fault, alarm logic, dashboard smoke tests)
 ```
 

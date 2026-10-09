@@ -1,0 +1,96 @@
+% Shared preamble for report_en.tex and report_tr.tex
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{../reports/figures/}}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\captionsetup{font=small,labelfont=bf}
+\setlist{itemsep=0.15em,topsep=0.3em}
+
+\definecolor{ink}{HTML}{0B0B0B}
+\definecolor{ink2}{HTML}{52514E}
+\definecolor{accent}{HTML}{2A78D6}
+\definecolor{alarm}{HTML}{E34948}
+\definecolor{codebg}{HTML}{F6F6F4}
+\definecolor{codekw}{HTML}{4A3AA7}
+\definecolor{codestr}{HTML}{0F7B55}
+\definecolor{codecom}{HTML}{8A8984}
+
+\lstdefinestyle{py}{
+  language=Python,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{codekw}\bfseries,
+  stringstyle=\color{codestr},
+  commentstyle=\color{codecom}\itshape,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{codebg},
+  framesep=4pt,
+  numbers=left,
+  numberstyle=\tiny\color{codecom},
+  numbersep=6pt,
+  showstringspaces=false,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  keepspaces=true,
+  tabsize=4,
+  upquote=true,
+  morekeywords={self,None,True,False},
+  literate={×}{{$\times$}}1 {≈}{{$\approx$}}1 {→}{{$\to$}}1
+}
+\lstdefinestyle{plain}{
+  basicstyle=\ttfamily\footnotesize,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{codebg},
+  framesep=4pt,
+  columns=fullflexible,
+  keepspaces=true,
+  breaklines=true,
+  upquote=true
+}
+\lstset{style=py}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.3pt}
+\fancyfoot[C]{\thepage}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\figw}{\textwidth}
+
+% Pipeline diagram (language-neutral labels are passed as arguments)
+\newcommand{\pipeline}[6]{%
+\begin{tikzpicture}[
+  node distance=0.55cm,
+  box/.style={draw=accent!70,fill=accent!6,rounded corners=3pt,align=center,
+              minimum height=1.25cm,text width=2.35cm,font=\small},
+  arr/.style={-{Stealth[length=2.4mm]},thick,draw=ink2}]
+  \node[box] (a) {#1};
+  \node[box,right=of a] (b) {#2};
+  \node[box,right=of b] (c) {#3};
+  \node[box,right=of c] (d) {#4};
+  \node[box,right=of d,draw=alarm!80,fill=alarm!6] (e) {#5};
+  \draw[arr] (a) -- (b); \draw[arr] (b) -- (c); \draw[arr] (c) -- (d); \draw[arr] (d) -- (e);
+  \node[below=0.25cm of c,font=\footnotesize\color{ink2},text width=12cm,align=center] {#6};
+\end{tikzpicture}}
