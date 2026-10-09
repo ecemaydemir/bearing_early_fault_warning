@@ -8,3 +8,5 @@ tabulate>=0.9
 torch>=2.2
 py7zr>=0.21
 pytest>=8.0
+streamlit>=1.35
+plotly>=5.20

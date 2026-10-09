@@ -49,6 +49,17 @@ Test durations: test1 828 h, test2 164 h, test3 1073 h.
 Full per-bearing results: [`reports/summary.csv`](reports/summary.csv). Score traces:
 `reports/scores.csv.gz`.
 
+## Interactive dashboard
+
+`make dashboard` (or `streamlit run app/dashboard.py`) replays any test as if it were streaming
+from the machine. Pick a test and a detector, press **Play**, and watch each bearing's status move
+from healthy to alarm. Each tile shows the score against its threshold, how long the alarm has been
+active, which bearing alarmed first (the likely source, since vibration travels to its neighbours)
+and the defect frequency with the strongest envelope signature. Ground truth stays hidden until you
+reveal it.
+
+![Dashboard replaying test2](reports/figures/dashboard.png)
+
 ## How it works
 
 ```
@@ -115,6 +126,7 @@ feature tables in `data/features/` are, so every result can be reproduced withou
 pip install -r requirements.txt
 
 make experiment   # ~2 min on a laptop CPU, uses the committed feature tables
+make dashboard    # interactive replay at http://localhost:8501
 make test
 
 # Optional: rebuild the features from raw data
@@ -136,10 +148,11 @@ src/bearing_efw/
     alarm.py                thresholding, k-of-n debouncing, alarm episodes
     plots.py                report figures
 scripts/                    download_data.py, build_features.py, run_experiment.py
+app/dashboard.py            Streamlit replay of a test with live status, diagnosis and alarm log
 data/features/              extracted features (committed)
 reports/                    results.md, summary.csv, scores.csv.gz, figures/
 notebooks/                  01_walkthrough.ipynb
-tests/                      unit tests (feature sanity, synthetic outer-race fault, alarm logic)
+tests/                      unit tests (features, synthetic outer-race fault, alarm logic, dashboard smoke tests)
 ```
 
 ## Limitations and next steps
@@ -149,8 +162,7 @@ tests/                      unit tests (feature sanity, synthetic outer-race fau
   call documented in the config.
 * Three tests is a small sample; numbers will move with different settings. They were chosen on
   test2 only.
-* Next: re-baselining after restarts (test3), remaining-useful-life estimation after the alarm,
-  and a small dashboard that replays a test as a live stream.
+* Next: re-baselining after restarts (test3) and remaining-useful-life estimation after the alarm.
 
 ## References
 
