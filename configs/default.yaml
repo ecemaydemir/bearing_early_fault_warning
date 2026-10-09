@@ -1,0 +1,45 @@
+# Experiment configuration. Splits are fractions of each test's snapshots (in time
+# order) so the same settings apply to all three run-to-failure tests.
+
+split:
+  train_end: 0.25        # first 25 % of life: assumed healthy, used to fit detectors
+  calib_end: 0.35        # next 10 %: used only to set each bearing's alarm threshold
+
+# Window in which no bearing is believed to be degrading yet (from the EDA notebook
+# and the literature). Alarms between calib_end and healthy_end count as false alarms.
+healthy_end:
+  test1: 0.60
+  test2: 0.50
+  test3: 0.85
+
+threshold:
+  quantile: 0.995        # of calibration scores ...
+  margin: 0.5            # ... pushed out by 0.5x its distance from the median
+
+alarm:
+  k: 4                   # raise an alarm when k of the last n snapshots exceed the threshold
+  n: 6
+
+# test2 is the development set (hyper-parameters were chosen on it);
+# test1 and test3 are held out.
+dev_test: test2
+
+models:
+  rms:
+    enabled: true
+  mahalanobis:
+    enabled: true
+  isolation_forest:
+    enabled: true
+    n_estimators: 300
+    seed: 0
+  lstm_ae:
+    enabled: true
+    window: 12           # consecutive snapshots per sequence (~2 h)
+    hidden: 32
+    latent: 8
+    epochs: 60
+    lr: 0.002
+    batch_size: 64
+    noise: 0.1           # denoising autoencoder input noise (in std units)
+    seed: 0
